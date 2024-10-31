@@ -21,14 +21,14 @@ router.get('/:id', (req, res) => {
 
 // Endpoint untuk menambahkan tugas baru
 router.post('/', (req, res) => {
-    const { task, completed } = req.body;
+    const { task } = req.body;
     if (!task || task.trim() === '') {
         return res.status(400).send('Tugas tidak boleh kosong');
     }
 
-    db.query('INSERT INTO todos (task, completed) VALUES (?, ?)', [task.trim(), completed], (err, results) => {
+    db.query('INSERT INTO todos (task) VALUES (?)', [task.trim()], (err, results) => {
         if (err) return res.status(500).send('Internal Server Error');
-        const newTodo = { id: results.insertId, task: task.trim(), completed: completed };
+        const newTodo = { id: results.insertId, task: task.trim(), completed: false };
         res.status(201).json(newTodo);
     });
 });
