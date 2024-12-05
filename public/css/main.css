@@ -1,0 +1,21 @@
+@import url(variables.css);
+
+body{
+  background-color: var(--secondary) !important;
+  min-height: 100%;
+  position: relative;
+}
+
+label, h1, h2 , p{
+  color: var(--white) !important;
+}
+
+.btn-primary{
+  background-color: var(--tertiary) !important;
+  border-color: var(--primary) !important;
+}
+
+input{
+  background-image: var(--primary) !important;
+  border-color: var(--secondary) !important;
+}

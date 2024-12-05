@@ -1,0 +1,28 @@
+@import url(variables.css);
+
+.navbar {
+  background-color: var(--primary) !important;
+  font-size:1.5em
+}
+
+.navbar-brand{
+  color: var(--bluegray);
+  font-size:1.5em;
+  padding-right: 3rem;
+  font-weight: bolder;
+}
+.navbar-brand:hover {
+  color: var(--white);
+}
+
+.nav-link{
+  color: var(--bluegray);
+}
+
+.nav-link:hover{
+  color: var(--white);
+}
+
+.active {
+  color: var(--white) !important;
+}

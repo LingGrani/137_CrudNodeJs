@@ -1,0 +1,78 @@
+@import url(variables.css);
+
+.addTodoForm {
+  position: relative;
+  margin-bottom: 30px;
+  color: var(--tertiary);
+}
+
+.btn-close {
+  filter: invert(1);
+}
+
+.modal {
+  color: var(--white);
+}
+
+.addTodoForm button {
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-primary {
+  width: 200px;
+}
+
+.modal-content,
+.card,
+.card-body {
+  background-color: var(--primary) !important;
+}
+
+.card {
+  margin: 1rem;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.card:hover{
+  transform: scale(1.1);
+}
+
+.card-body {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.card-title {
+  text-align: center;
+  font-weight: bold;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  flex-grow: 1;
+  word-wrap: break-word;
+}
+
+.controller {
+  display: block;
+  margin: 0 auto;
+}
+
+.controller button {
+  margin: 20px;
+  width: 100px;
+}
+
+.btn {
+  font-weight: bolder;
+}

@@ -3,13 +3,12 @@ const todoRoutes = require('./routes/tododb.js');
 const app = express();
 require('dotenv').config();
 const port = process.env.PORT;
+const path = require('path')
 
 //Pertemuan 7 session dan bycrpt
 const session = require(`express-session`);
 const authRoutes = require('./routes/authRoutes');
 const { isAuthenticated } = require('./middlewares/middleware.js');
-
-
 
 const expressLayout = require(`express-ejs-layouts`)
 
@@ -21,6 +20,7 @@ app.use(express.json());
 
 app.use('/todos', todoRoutes);
 app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -33,12 +33,6 @@ app.use(session({
 }));
 
 app.use('/', authRoutes),
-
-app.get('/login', (req, res) => {
-  res.render('login', {
-    layout: 'layouts/'
-  });
-});
 
 app.get('/', isAuthenticated, (req, res) => {
     res.render('index', {
